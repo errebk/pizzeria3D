@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Moderna | Autentica e Premium</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="su-logo-flat">
+            <span class="su-top-flat neon-green">Pizza al Trancio & Burger</span>
+            <span class="neon-white su-title">SENSO UNICO</span>
+            <div class="su-bot-container">
+                <svg viewBox="0 0 200 20" class="su-arrow-flat" preserveAspectRatio="none">
+                    <!-- Freccia da destra verso sinistra -->
+                    <path d="M 200,10 L 10,10 M 10,10 L 30,0 M 10,10 L 30,20" class="neon-white-path" />
+                </svg>
+                <span class="su-bot-flat neon-red">dal 1998</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#menu">Il Nostro Menu</a></li>
+                <li><a href="#prenota" class="btn-primary">Prenota Ora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Super Premium Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>L'eccellenza in<br><span class="highlight">ogni fetta.</span></h1>
+            <p>Scopri il sapore autentico dell'Italia, preparato con ingredienti freschissimi e cotto nel nostro forno a
+                legna tradizionale.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-primary">Scopri il Menu</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="pizza-wrapper">
+                <img src="assets/hero_pizza_slice_1772466773201.png" alt="Pizza 3D fluttuante Margherita"
+                    class="pizza-3d" id="floating-pizza">
+            </div>
+            <div class="ambient-glow"></div>
+        </div>
+    </section>
+
+    <!-- Menu Section (Glassmorphism & Darkness) -->
+    <section id="menu">
+        <div class="menu-intro fade-in">
+            <h2>Pizze d'autore</h2>
+            <p>Un trionfo di gusto, tradizione ed eleganza.</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Margherita Card -->
+            <div class="menu-card fade-in">
+                <div class="card-image">
+                    <img src="assets/hero_pizza_slice_1772466773201.png" alt="Pizza Margherita Premium">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Margherita Regina</h3>
+                        <span class="price">€12.00</span>
+                    </div>
+                    <p>Pomodoro San Marzano DOP, mozzarella di bufala campana, basilico fresco, olio EVO.</p>
+                    <button class="btn-secondary">Aggiungi</button>
+                </div>
+            </div>
+
+            <!-- Diavola Card -->
+            <div class="menu-card fade-in" style="transition-delay: 0.1s;">
+                <div class="card-image">
+                    <img src="assets/menu_diavola_slice_1772466804172.png" alt="Pizza Diavola Premium">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Diavola Nera</h3>
+                        <span class="price">€14.50</span>
+                    </div>
+                    <p>Salsa di pomodoro piccante, spianata calabrese croccante, 'nduja, miele piccante.</p>
+                    <button class="btn-secondary">Aggiungi</button>
+                </div>
+            </div>
+
+            <!-- Tartufo Card -->
+            <div class="menu-card fade-in" style="transition-delay: 0.2s;">
+                <div class="card-image">
+                    <img src="assets/menu_tartufo_slice_1772466906824.png" alt="Pizza Tartufo Premium">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Tartufo Estivo</h3>
+                        <span class="price">€18.00</span>
+                    </div>
+                    <p>Crema di funghi porcini, fior di latte, scaglie di tartufo nero fresco e olio al tartufo.</p>
+                    <button class="btn-secondary">Aggiungi</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="prenota">
+        <div class="footer-content">
+            <div class="su-logo-flat">
+                <span class="su-top-flat neon-green">Pizza al Trancio & Burger</span>
+                <span class="neon-white su-title">SENSO UNICO</span>
+                <div class="su-bot-container">
+                    <svg viewBox="0 0 200 20" class="su-arrow-flat" preserveAspectRatio="none">
+                        <!-- Freccia da destra verso sinistra -->
+                        <path d="M 200,10 L 10,10 M 10,10 L 30,0 M 10,10 L 30,20" class="neon-white-path" />
+                    </svg>
+                    <span class="su-bot-flat neon-red">dal 1998</span>
+                </div>
+            </div>
+            <p>Il gusto esplosivo, direttamente a casa tua.</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pizzeria Moderna. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

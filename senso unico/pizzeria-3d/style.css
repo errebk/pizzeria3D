@@ -1,0 +1,588 @@
+/* ==============================================================
+   CSS RESET & VARIABLES 
+   ============================================================== */
+:root {
+    --bg-color: #080808;
+    /* Profondo scuro per un look premium */
+    --surface-color: rgba(255, 255, 255, 0.05);
+    /* Effetto base per glassmorphism */
+    --surface-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent-red: #f02d2d;
+    --accent-green: #2e7d32;
+    --glass-blur: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==============================================================
+   HEADER & NAV 
+   ============================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.su-logo-flat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    cursor: default;
+    margin-top: 15px;
+}
+
+footer .su-logo-flat {
+    margin: 0 auto 2rem;
+}
+
+.su-logo-flat .su-top-flat {
+    font-size: 0.65rem;
+    /* Rimpicciolito */
+    font-weight: 800;
+    align-self: flex-start;
+    margin-bottom: 2px;
+    /* Spazio aumentato per allontanarlo dal bianco */
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+    /* Align precisely over the 'S' */
+    z-index: 2;
+}
+
+.su-mid-flat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.su-title {
+    font-size: 3.5rem;
+    /* Rimpicciolito in generale */
+    letter-spacing: 5px;
+    line-height: 1;
+    margin: 0;
+    z-index: 1;
+    -webkit-text-stroke: 1.5px #fff !important;
+    /* Bordo proporzionato a font minore */
+}
+
+.su-bot-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    /* Stretch container to full width of SENSO UNICO */
+    align-self: flex-end;
+    margin-top: 5px;
+    /* Slight gap below the main text like in photo */
+    margin-right: 10px;
+    /* Align edge of '1998' with 'O' */
+    gap: 8px;
+    /* Extremely tight gap between arrow and 'DAL 1998' */
+}
+
+.su-arrow-flat {
+    flex-grow: 1;
+    /* Prende lo spazio rimanente */
+    height: 15px;
+    overflow: visible;
+}
+
+.neon-white-path {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #fff);
+    animation: flicker-white-path 3s infinite alternate;
+}
+
+.su-logo-flat .su-bot-flat {
+    font-size: 0.95rem;
+    /* Rimpicciolita in proporzione */
+    font-weight: 700;
+    white-space: nowrap;
+    margin-top: 0px;
+    /* Alignment fix */
+    letter-spacing: 1px;
+    /* Match spacing from photo */
+    color: #ffb3b3;
+    /* Slightly softer red */
+}
+
+.neon-green {
+    font-size: 0.65rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #ccffcc;
+    text-shadow: 0 0 4px #0fa, 0 0 10px #0fa, 0 0 20px #0fa, 0 0 30px #0fa, 0 0 40px #0fa;
+    animation: flicker-green 4s infinite alternate;
+}
+
+.neon-white {
+    font-size: 2rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff;
+    letter-spacing: 2px;
+    animation: flicker-white 3s infinite alternate;
+}
+
+.neon-red {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #ffcccc;
+    text-shadow: 0 0 4px #f00, 0 0 10px #f00, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00;
+    align-self: flex-end;
+    animation: flicker-red 5s infinite alternate-reverse;
+}
+
+footer .neon-red {
+    align-self: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+nav a {
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-red);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-red), #ba1b1b);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(240, 45, 45, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(240, 45, 45, 0.6);
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--accent-red);
+    color: var(--accent-red);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-red);
+    color: white;
+}
+
+/* ==============================================================
+   HERO SECTION (3D PIZZA)
+   ============================================================== */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+    padding-top: 5rem;
+    /* account for header */
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+}
+
+.highlight {
+    color: var(--accent-red);
+    background: linear-gradient(to right, #ff4e50, #f9d423);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* 3D Floating Animation */
+@keyframes floatAndRotate {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg) scale(1.02);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.pizza-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    perspective: 1000px;
+    /* Gives nice 3D depth to hover effect */
+    transition: transform 0.1s ease-out;
+    /* Spostato dal figlio per Parallax JS */
+    transform-style: preserve-3d;
+}
+
+.pizza-3d {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.8));
+    animation: floatAndRotate 6s ease-in-out infinite;
+}
+
+.ambient-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(240, 45, 45, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+/* ==============================================================
+   MENU SECTION (GLASSMORPHISM)
+   ============================================================== */
+#menu {
+    padding: 8rem 5%;
+    position: relative;
+}
+
+.menu-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.menu-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-intro p {
+    color: var(--text-secondary);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    background: var(--surface-color);
+    border: 1px solid var(--surface-border);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(240, 45, 45, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.menu-card:hover .card-image img {
+    transform: scale(1.08);
+    /* Effetto zoom al passaggio del mouse sull'immagine */
+}
+
+.card-content {
+    padding: 1.8rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--accent-red);
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* ==============================================================
+   FOOTER
+   ============================================================== */
+footer {
+    padding: 4rem 5% 2rem;
+    background: #050505;
+    text-align: center;
+    border-top: 1px solid var(--surface-border);
+}
+
+.footer-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content h2 span {
+    color: var(--accent-red);
+}
+
+.footer-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ==============================================================
+   ANIMATIONS & UTILITIES 
+   ============================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes flicker-green {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 4px #0fa, 0 0 10px #0fa, 0 0 20px #0fa, 0 0 30px #0fa, 0 0 40px #0fa;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+@keyframes flicker-white {
+
+    0%,
+    30%,
+    32%,
+    35%,
+    73%,
+    77%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff;
+    }
+
+    31%,
+    34%,
+    75% {
+        opacity: 0.3;
+        text-shadow: none;
+    }
+}
+
+@keyframes flicker-white-path {
+
+    0%,
+    30%,
+    32%,
+    35%,
+    73%,
+    77%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 8px #fff) drop-shadow(0 0 15px #fff);
+    }
+
+    31%,
+    34%,
+    75% {
+        opacity: 0.3;
+        filter: none;
+    }
+}
+
+@keyframes flicker-red {
+
+    0%,
+    10%,
+    12%,
+    15%,
+    83%,
+    87%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 4px #f00, 0 0 10px #f00, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00;
+    }
+
+    11%,
+    14%,
+    85% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 991px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .hero-content p {
+        margin: 0 auto 2rem;
+    }
+
+    .hero-visual {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        /* In production add a hamburger menu */
+    }
+}
